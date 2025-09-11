@@ -14,6 +14,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Change image every 5 seconds
     setInterval(showNextItem, 5000);
 
+    // Typing animation function
+    function typeText(element, text, speed = 50) {
+        element.innerHTML = '<span class="typing-text"></span><span class="typing-cursor"></span>';
+        const textSpan = element.querySelector('.typing-text');
+        let i = 0;
+        
+        function typeCharacter() {
+            if (i < text.length) {
+                textSpan.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeCharacter, speed);
+            } else {
+                // Remove cursor after typing is complete
+                setTimeout(() => {
+                    const cursor = element.querySelector('.typing-cursor');
+                    if (cursor) cursor.remove();
+                }, 2000);
+            }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeCharacter, 500);
+    }
+
     // Scroll animations
     const observerOptions = {
         threshold: 0.1,
@@ -28,9 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Trigger typing animation for about section
                 if (entry.target.id === 'about') {
                     const aboutText = entry.target.querySelector('p');
-                    if (aboutText) {
-                        aboutText.style.whiteSpace = 'nowrap';
-                        aboutText.style.animation = 'typing 3s steps(100) 0.5s forwards, blink 1s infinite 0.5s';
+                    if (aboutText && !aboutText.classList.contains('typed')) {
+                        aboutText.classList.add('typed');
+                        const originalText = aboutText.textContent;
+                        typeText(aboutText, originalText, 30);
                     }
                 }
             }
