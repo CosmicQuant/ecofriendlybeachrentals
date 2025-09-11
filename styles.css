@@ -294,7 +294,7 @@ nav ul li a:hover {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     animation: slideInLeft 1s ease-out 1.2s both;
 }
@@ -531,6 +531,55 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Navigation adjustments for mobile */
+    nav {
+        top: 10px;
+        padding: 10px 0;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    nav ul li a {
+        font-size: 0.8em;
+    }
+    
+    /* Carousel content adjustments */
+    .content h1 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+    
+    .content p {
+        font-size: 1em;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    /* About section mobile */
+    #about h2 {
+        font-size: 2em;
+    }
+    
+    #about p {
+        font-size: 1.1em;
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    /* Products grid mobile */
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .product-item h3 {
+        font-size: 1.3em;
+    }
+    
+    /* Contact section mobile */
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -544,5 +593,53 @@ footer {
     
     .contact-form {
         padding: 30px 20px;
+    }
+    
+    /* Section padding adjustments */
+    #about, #products, #contact {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Additional mobile optimization for smaller screens */
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 0 5px;
+    }
+    
+    nav ul li a {
+        font-size: 0.7em;
+        letter-spacing: 0.2px;
+    }
+    
+    .content h1 {
+        font-size: 2em;
+        line-height: 1.2;
+    }
+    
+    .content p {
+        font-size: 0.9em;
+    }
+    
+    #about h2, #products h2, #contact h2 {
+        font-size: 1.8em;
+    }
+    
+    .product-item {
+        padding: 15px;
+    }
+    
+    .contact-form {
+        padding: 20px 15px;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
     }
 }
