@@ -463,6 +463,11 @@ nav ul li a:hover {
     gap: 8px;
 }
 
+.social-icons a img {
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
 .social-icons a:hover {
     color: #388e3c;
 }
@@ -533,6 +538,18 @@ footer {
     grid-template-columns: 2fr 1fr;
     gap: 40px;
     margin-bottom: 30px;
+    align-items: start;
+}
+
+.social-links {
+    margin-top: 0;
+}
+
+.social-links h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #4CAF50;
+    font-size: 1.5em;
 }
 
 .footer-info h3 {
@@ -545,23 +562,6 @@ footer {
     margin: 8px 0;
     color: #ccc;
     line-height: 1.5;
-}
-
-.footer-social {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-social a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.footer-social a:hover {
-    color: #66BB6A;
 }
 
 .footer-bottom {
