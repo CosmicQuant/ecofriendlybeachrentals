@@ -83,6 +83,13 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
 @keyframes fadeInCenter {
     from {
         opacity: 0;
@@ -117,11 +124,13 @@ body, html {
 
 nav {
     position: fixed;
-    top: 30px;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 20;
+    background-color: transparent;
+    z-index: 1000;
     padding: 15px 0;
+    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -793,8 +802,9 @@ footer {
 @media (max-width: 768px) {
     /* Navigation adjustments for mobile */
     nav {
-        top: 10px;
+        top: 0;
         padding: 10px 0;
+        background-color: transparent;
     }
     
     .nav-container {
