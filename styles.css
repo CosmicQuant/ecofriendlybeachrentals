@@ -477,6 +477,127 @@ nav ul li a:hover {
     box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
+/* Why Choose Us Section */
+#why-choose-us {
+    background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+    padding: 80px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+#why-choose-us h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+#why-choose-us .section-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.why-choose-item {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+.why-choose-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+.why-choose-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+}
+
+.why-choose-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.why-choose-item p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+}
+
+.testimonial-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4CAF50, #2e8b57);
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+}
+
+.testimonial-slide .testimonial-content {
+    text-align: center;
+    width: 100%;
+}
+
+.testimonial-slide .testimonial-content p {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-slide .testimonial-author {
+    font-weight: 600;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
 #contact {
     background-color: #f4f4f4;
     padding: 60px 0 40px 0;
@@ -758,8 +879,43 @@ footer {
     }
     
     /* Section padding adjustments */
-    #about, #products, #contact {
+    #about, #products, #contact, #why-choose-us {
         padding: 40px 0;
+    }
+    
+    #why-choose-us h2 {
+        font-size: 2em;
+    }
+    
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .why-choose-item {
+        padding: 25px 20px;
+    }
+    
+    .why-choose-icon {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+    
+    .testimonial-carousel {
+        margin: 0 20px;
+    }
+    
+    .testimonial-container {
+        height: 180px;
+    }
+    
+    .testimonial-slide {
+        padding: 30px 20px;
+    }
+    
+    .testimonial-slide .testimonial-content p {
+        font-size: 1.1em;
     }
     
     .container {
@@ -816,5 +972,43 @@ footer {
         width: 35px;
         height: 35px;
         font-size: 18px;
+    }
+    
+    /* Why Choose Us mobile styles for small screens */
+    #why-choose-us h2 {
+        font-size: 1.8em;
+    }
+    
+    #why-choose-us .section-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    
+    .why-choose-item {
+        padding: 20px 15px;
+    }
+    
+    .why-choose-item h3 {
+        font-size: 1.2em;
+    }
+    
+    .why-choose-icon {
+        font-size: 2.2em;
+    }
+    
+    .testimonial-carousel {
+        margin: 0 15px;
+    }
+    
+    .testimonial-container {
+        height: 160px;
+    }
+    
+    .testimonial-slide {
+        padding: 25px 15px;
+    }
+    
+    .testimonial-slide .testimonial-content p {
+        font-size: 1em;
     }
 }

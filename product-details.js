@@ -134,6 +134,28 @@ const products = {
         },
         category: 'Individual Item'
     },
+    'beach-tables': {
+        name: 'Beach Tables',
+        description: 'Sturdy and weather-resistant tables perfect for dining and activities on the beach. Ideal for meals, games, and organizing beach events.',
+        mainImage: '39.jpg',
+        gallery: ['39.jpg', 'Landing2_compressed.jpg'],
+        features: [
+            'Weather resistant design',
+            'Stable construction',
+            'Easy to clean surface',
+            'Multiple size options',
+            'Lightweight yet sturdy',
+            'Sand-resistant legs'
+        ],
+        specifications: {
+            'Ideal For': 'Beach dining, activities, event organization',
+            'Material': 'Weather-resistant plastic and aluminum',
+            'Surface': 'Easy-clean, stain-resistant',
+            'Sizes': 'Small (2-4 people), Medium (4-6 people), Large (6-8 people)',
+            'Rental': 'Individual tables or event packages'
+        },
+        category: 'Individual Item'
+    },
     'dining-setup': {
         name: 'Dining Setup',
         description: 'Complete dining arrangements including cutlery, plates, and table settings. Enhances any beach dining experience with style.',

@@ -35,6 +35,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Change image every 5 seconds
     setInterval(showNextItem, 5000);
 
+    // Testimonial carousel functionality
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    let currentTestimonialIndex = 0;
+
+    function showNextTestimonial() {
+        // Remove active class from current testimonial
+        testimonialSlides[currentTestimonialIndex].classList.remove('active');
+        
+        // Move to next testimonial
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
+        
+        // Add active class to new testimonial
+        testimonialSlides[currentTestimonialIndex].classList.add('active');
+    }
+
+    // Start testimonial carousel if testimonials exist
+    if (testimonialSlides.length > 0) {
+        testimonialSlides[currentTestimonialIndex].classList.add('active');
+        // Change testimonial every 4 seconds
+        setInterval(showNextTestimonial, 4000);
+    }
+
     // Typing animation function
     function typeText(element, text, speed = 50) {
         element.innerHTML = '<span class="typing-text"></span><span class="typing-cursor"></span>';
