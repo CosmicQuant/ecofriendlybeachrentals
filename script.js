@@ -1,4 +1,60 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Image loading optimization
+    function optimizeImageLoading() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        
+        // Create intersection observer for lazy loading
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // Preload next carousel images when current becomes visible
+                        if (img.closest('.carousel-item')) {
+                            preloadNextCarouselImages(img);
+                        }
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+        
+        // Add load event listeners for smooth transitions
+        document.querySelectorAll('.carousel-item img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+            
+            // If image is already cached, trigger load immediately
+            if (img.complete) {
+                img.classList.add('loaded');
+            }
+        });
+    }
+    
+    function preloadNextCarouselImages(currentImg) {
+        const currentItem = currentImg.closest('.carousel-item');
+        const allItems = document.querySelectorAll('.carousel-item');
+        const currentIndex = Array.from(allItems).indexOf(currentItem);
+        
+        // Preload next 2 images
+        for (let i = 1; i <= 2; i++) {
+            const nextIndex = (currentIndex + i) % allItems.length;
+            const nextImg = allItems[nextIndex].querySelector('img');
+            if (nextImg && !nextImg.classList.contains('loaded')) {
+                // Create a new image to trigger preload
+                const preloadImg = new Image();
+                preloadImg.src = nextImg.src;
+            }
+        }
+    }
+    
+    // Initialize image optimization
+    optimizeImageLoading();
+    
     const items = document.querySelectorAll('.carousel-item');
     let currentIndex = 0;
 
@@ -6,6 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
         items[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % items.length;
         items[currentIndex].classList.add('active');
+        
+        // Preload next images when switching
+        const currentImg = items[currentIndex].querySelector('img');
+        if (currentImg) {
+            preloadNextCarouselImages(currentImg);
+        }
     }
 
     // Start the carousel
