@@ -233,6 +233,78 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
+/* Carousel Caption Styles */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 20;
+    text-shadow: 4px 4px 12px rgba(0,0,0,1), 2px 2px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8);
+    min-width: 350px;
+    max-width: 85vw;
+    padding: 15px 20px;
+}
+
+/* Animation keyframes for carousel text */
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDelayed {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Carousel text elements */
+.carousel-title {
+    font-size: 3.2em;
+    margin-bottom: 0.6em;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-out 1.5s forwards;
+}
+
+.carousel-text {
+    font-size: 1.4em;
+    margin-bottom: 1.5em;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInDelayed 1s ease-out 2.5s forwards;
+}
+
+/* Reset animations when slide changes */
+.carousel-item:not(.active) .carousel-title,
+.carousel-item:not(.active) .carousel-text {
+    opacity: 0;
+    animation: none;
+}
+
+/* Trigger animations when slide becomes active */
+.carousel-item.active .carousel-title {
+    animation: slideInFromBottom 1s ease-out 1.5s forwards;
+}
+
+.carousel-item.active .carousel-text {
+    animation: fadeInDelayed 1s ease-out 2.5s forwards;
+}
+
 .content {
     position: absolute;
     top: 50%;

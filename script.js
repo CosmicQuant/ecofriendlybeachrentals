@@ -3,9 +3,30 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     function showNextItem() {
+        // Remove active class and reset animations
         items[currentIndex].classList.remove('active');
+        const currentCaptions = items[currentIndex].querySelectorAll('.carousel-title, .carousel-text');
+        currentCaptions.forEach(caption => {
+            caption.style.animation = 'none';
+            caption.style.opacity = '0';
+        });
+        
+        // Move to next slide
         currentIndex = (currentIndex + 1) % items.length;
         items[currentIndex].classList.add('active');
+        
+        // Restart animations for new slide
+        setTimeout(() => {
+            const newCaptions = items[currentIndex].querySelectorAll('.carousel-title, .carousel-text');
+            newCaptions.forEach(caption => {
+                caption.style.animation = '';
+                if (caption.classList.contains('carousel-title')) {
+                    caption.style.animation = 'slideInFromBottom 1s ease-out 1.5s forwards';
+                } else if (caption.classList.contains('carousel-text')) {
+                    caption.style.animation = 'fadeInDelayed 1s ease-out 2.5s forwards';
+                }
+            });
+        }, 100);
     }
 
     // Start the carousel
