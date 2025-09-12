@@ -217,11 +217,11 @@ function loadRelatedProducts(currentProductId) {
         .slice(0, 3); // Show only 3 related products
     
     relatedContainer.innerHTML = relatedProducts.map(([id, product]) => `
-        <div class="related-item" onclick="window.location.href='product-details.html?id=${id}'">
+        <div class="related-item" onclick="window.location.href='product-details.html?product=${id}'">
             <img src="${product.mainImage}" alt="${product.name}">
             <div class="related-item-info">
                 <h4>${product.name}</h4>
-                <p>${product.shortDescription}</p>
+                <p>${product.description.substring(0, 100)}...</p>
             </div>
         </div>
     `).join('');
