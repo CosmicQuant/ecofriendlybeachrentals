@@ -5,8 +5,8 @@ const products = {
     'chill-outs': {
         name: 'Chill Outs Package',
         description: 'Perfect relaxation setup for intimate beach gatherings. Create the ultimate chill experience with our carefully curated collection of comfort and ambiance elements.',
-        mainImage: 'Landing3_enhanced.png',
-        gallery: ['Landing3_enhanced.png', 'Canvas Beach Chairs.jpeg', 'Glow in Dark Light.jpeg', 'Water Resistant Pillows.jpeg'],
+        mainImage: 'Landing3_compressed.jpg',
+        gallery: ['Landing3_compressed.jpg', 'Canvas Beach Chairs.jpeg', 'Glow in Dark Light.jpeg', 'Water Resistant Pillows.jpeg'],
         features: [
             'Comfortable seating arrangements',
             'Ambient lighting solutions',
@@ -27,8 +27,8 @@ const products = {
     'gatherings': {
         name: 'Gatherings Package',
         description: 'Ideal for medium-sized social events. Complete setup with seating arrangements, dining area, and entertainment space for memorable beach gatherings.',
-        mainImage: 'Landing2_enhanced.png',
-        gallery: ['Landing2_enhanced.png', 'Dining Cutlery.jpeg', 'Canvas Beach Chairs.jpeg', 'Flower Vases.jpeg'],
+        mainImage: 'Landing2_compressed.jpg',
+        gallery: ['Landing2_compressed.jpg', 'Dining Cutlery.jpeg', 'Canvas Beach Chairs.jpeg', 'Flower Vases.jpeg'],
         features: [
             'Complete seating arrangements',
             'Dining area setup',
@@ -49,8 +49,8 @@ const products = {
     'mini-events': {
         name: 'Mini Events Package',
         description: 'Professional setup for small celebrations and events. Includes tables, chairs, decorative elements, and full event styling for special occasions.',
-        mainImage: 'Landing1_enhanced.png',
-        gallery: ['Landing1_enhanced.png', 'Flower Vases.jpeg', 'Dining Cutlery.jpeg', 'Glow in Dark Light.jpeg'],
+        mainImage: 'Landing1_compressed.jpg',
+        gallery: ['Landing1_compressed.jpg', 'Flower Vases.jpeg', 'Dining Cutlery.jpeg', 'Glow in Dark Light.jpeg'],
         features: [
             'Professional event setup',
             'Complete table and chair arrangements',
