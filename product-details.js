@@ -133,6 +133,116 @@ const products = {
             'Rental': 'Individual item or package inclusion'
         },
         category: 'Individual Item'
+    },
+    'dining-cutlery': {
+        name: 'Dining Cutlery',
+        description: 'Complete dining cutlery sets for elegant beach dining experiences.',
+        mainImage: 'Dining Cutlery.jpeg',
+        gallery: ['Dining Cutlery.jpeg', 'Flower Vases.jpeg', 'Canvas Beach Chairs.jpeg'],
+        features: [
+            'Complete cutlery sets',
+            'Eco-friendly materials',
+            'Elegant design',
+            'Available in different set sizes',
+            'Easy to clean',
+            'Perfect for formal beach dining'
+        ],
+        specifications: {
+            'Material': 'Stainless steel with bamboo handles',
+            'Set Size': '6-piece, 12-piece, or 24-piece sets',
+            'Includes': 'Forks, knives, spoons, serving utensils',
+            'Style': 'Elegant beach dining',
+            'Maintenance': 'Easy care and cleaning'
+        },
+        category: 'Additional Item'
+    },
+    'flower-vases': {
+        name: 'Decorative Flower Vases',
+        description: 'Beautiful decorative vases to add natural elegance to your beach setup.',
+        mainImage: 'Flower Vases.jpeg',
+        gallery: ['Flower Vases.jpeg', 'Dining Cutlery.jpeg', 'Water Resistant Pillows.jpeg'],
+        features: [
+            'Various sizes and styles',
+            'Weather-resistant materials',
+            'Natural tropical flowers available',
+            'Perfect centerpieces',
+            'Elegant decoration',
+            'Complements any setup theme'
+        ],
+        specifications: {
+            'Material': 'Ceramic and natural materials',
+            'Sizes': 'Small, medium, and large options',
+            'Style': 'Tropical and coastal themes',
+            'Flowers': 'Fresh tropical arrangements available',
+            'Placement': 'Tables, ground arrangements'
+        },
+        category: 'Additional Item'
+    },
+    'water-resistant-pillows': {
+        name: 'Water Resistant Pillows',
+        description: 'Comfortable water-resistant pillows perfect for beach lounging and seating.',
+        mainImage: 'Water Resistant Pillows.jpeg',
+        gallery: ['Water Resistant Pillows.jpeg', 'Canvas Beach Chairs.jpeg', 'Glow in Dark Light.jpeg'],
+        features: [
+            'Water and sand resistant',
+            'Comfortable and soft',
+            'Easy to clean',
+            'Various colors available',
+            'Perfect for beach seating',
+            'Quick-dry material'
+        ],
+        specifications: {
+            'Material': 'Water-resistant fabric with quick-dry filling',
+            'Size': '18" x 18" and 24" x 24" options',
+            'Colors': 'Multiple coastal colors available',
+            'Care': 'Machine washable and quick-dry',
+            'Use': 'Beach seating, lounging, decoration'
+        },
+        category: 'Additional Item'
+    },
+    'glow-lights': {
+        name: 'Glow in Dark Lights',
+        description: 'Magical ambient lighting solutions for evening beach events and romantic settings.',
+        mainImage: 'Glow in Dark Light.jpeg',
+        gallery: ['Glow in Dark Light.jpeg', 'Water Resistant Pillows.jpeg', 'Flower Vases.jpeg'],
+        features: [
+            'Solar-powered options',
+            'Battery-operated varieties',
+            'Waterproof design',
+            'Multiple color options',
+            'Long-lasting illumination',
+            'Creates magical ambiance'
+        ],
+        specifications: {
+            'Power': 'Solar and battery options available',
+            'Duration': '6-12 hours of illumination',
+            'Colors': 'Warm white, cool white, multicolor',
+            'Weather': 'Fully waterproof',
+            'Installation': 'Easy setup and placement'
+        },
+        category: 'Additional Item'
+    },
+    'sisal-mats': {
+        name: 'Sisal Beach Mats',
+        description: 'Natural eco-friendly sisal mats perfect for beach seating and ground covering.',
+        mainImage: 'Sisal Beach Marts.jpeg',
+        gallery: ['Sisal Beach Marts.jpeg', 'Canvas Beach Chairs.jpeg', 'Water Resistant Pillows.jpeg'],
+        features: [
+            'Natural sisal material',
+            'Eco-friendly and sustainable',
+            'Sand-resistant surface',
+            'Various sizes available',
+            'Easy to clean',
+            'Perfect for group seating'
+        ],
+        specifications: {
+            'Material': '100% natural sisal fiber',
+            'Sizes': '4x6 feet, 6x8 feet, 8x10 feet',
+            'Care': 'Shake out sand, air dry',
+            'Durability': 'Long-lasting natural fibers',
+            'Use': 'Beach seating, picnic areas, decoration'
+        },
+        category: 'Additional Item'
     }
 };
 
