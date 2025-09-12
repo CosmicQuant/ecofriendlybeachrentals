@@ -54,7 +54,7 @@
                     <div class="products-grid">
                         <div class="product-card" onclick="viewProduct('chill-outs')">
                             <div class="product-image">
-                                <img src="Landing3_enhanced.png" alt="Chill Outs Package" loading="lazy">
+                                <img src="Landing3_enhanced.png" alt="Chill Outs Package">
                                 <div class="product-overlay">
                                     <span class="view-details">View Details</span>
                                 </div>
@@ -73,7 +73,7 @@
 
                         <div class="product-card" onclick="viewProduct('gatherings')">
                             <div class="product-image">
-                                <img src="Landing2_enhanced.png" alt="Gatherings Package" loading="lazy">
+                                <img src="Landing2_enhanced.png" alt="Gatherings Package">
                                 <div class="product-overlay">
                                     <span class="view-details">View Details</span>
                                 </div>
@@ -92,7 +92,7 @@
 
                         <div class="product-card" onclick="viewProduct('mini-events')">
                             <div class="product-image">
-                                <img src="Landing1_enhanced.png" alt="Mini Events Package" loading="lazy">
+                                <img src="Landing1_enhanced.png" alt="Mini Events Package">
                                 <div class="product-overlay">
                                     <span class="view-details">View Details</span>
                                 </div>
@@ -118,7 +118,7 @@
                     <div class="products-grid">
                         <div class="product-card" onclick="viewProduct('beach-shades')">
                             <div class="product-image">
-                                <img src="38.jpg" alt="Beach Shades" loading="lazy">
+                                <img src="38.jpg" alt="Beach Shades">
                                 <div class="product-overlay">
                                     <span class="view-details">View Details</span>
                                 </div>
@@ -137,7 +137,7 @@
 
                         <div class="product-card" onclick="viewProduct('canvas-chairs')">
                             <div class="product-image">
-                                <img src="Canvas Beach Chairs.jpeg" alt="Canvas Beach Chairs" loading="lazy">
+                                <img src="Canvas Beach Chairs.jpeg" alt="Canvas Beach Chairs">
                                 <div class="product-overlay">
                                     <span class="view-details">View Details</span>
                                 </div>
@@ -156,7 +156,7 @@
 
                         <div class="product-card" onclick="viewProduct('dining-tables')">
                             <div class="product-image">
-                                <img src="39.jpg" alt="Beach Tables" loading="lazy">
+                                <img src="39.jpg" alt="Beach Tables">
                                 <div class="product-overlay">
                                     <span class="view-details">View Details</span>
                                 </div>
@@ -352,47 +352,6 @@
                 }
             });
         });
-        
-        // Image loading optimization
-        function optimizeProductImages() {
-            const images = document.querySelectorAll('.product-image img');
-            
-            images.forEach(img => {
-                const imageContainer = img.closest('.product-image');
-                
-                img.addEventListener('load', function() {
-                    this.classList.add('loaded');
-                    if (imageContainer) {
-                        imageContainer.classList.add('image-loaded');
-                    }
-                });
-                
-                // If image is already cached, trigger load immediately
-                if (img.complete) {
-                    img.classList.add('loaded');
-                    if (imageContainer) {
-                        imageContainer.classList.add('image-loaded');
-                    }
-                }
-            });
-            
-            // Intersection observer for lazy loading
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            observer.unobserve(img);
-                        }
-                    });
-                });
-                
-                images.forEach(img => imageObserver.observe(img));
-            }
-        }
-        
-        // Initialize image optimization
-        optimizeProductImages();
     </script>
 </body>
 </html>
