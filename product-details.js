@@ -5,8 +5,8 @@ const products = {
     'chill-outs': {
         name: 'Chill Outs Package',
         description: 'Perfect relaxation setup for intimate beach gatherings. Create the ultimate chill experience with our carefully curated collection of comfort and ambiance elements.',
-        mainImage: 'Landing3.jpeg',
-        gallery: ['Landing3.jpeg', 'Canvas Beach Chairs.jpeg', 'Glow in Dark Light.jpeg', 'Water Resistant Pillows.jpeg'],
+        mainImage: 'Landing3_enhanced.png',
+        gallery: ['Landing3_enhanced.png', 'Canvas Beach Chairs.jpeg', 'Glow in Dark Light.jpeg', 'Water Resistant Pillows.jpeg'],
         features: [
             'Comfortable seating arrangements',
             'Ambient lighting solutions',
@@ -27,8 +27,8 @@ const products = {
     'gatherings': {
         name: 'Gatherings Package',
         description: 'Ideal for medium-sized social events. Complete setup with seating arrangements, dining area, and entertainment space for memorable beach gatherings.',
-        mainImage: 'Landing2.jpeg',
-        gallery: ['Landing2.jpeg', 'Dining Cutlery.jpeg', 'Canvas Beach Chairs.jpeg', 'Flower Vases.jpeg'],
+        mainImage: 'Landing2_enhanced.png',
+        gallery: ['Landing2_enhanced.png', 'Dining Cutlery.jpeg', 'Canvas Beach Chairs.jpeg', 'Flower Vases.jpeg'],
         features: [
             'Complete seating arrangements',
             'Dining area setup',
@@ -49,8 +49,8 @@ const products = {
     'mini-events': {
         name: 'Mini Events Package',
         description: 'Professional setup for small celebrations and events. Includes tables, chairs, decorative elements, and full event styling for special occasions.',
-        mainImage: 'Landing1.jpeg',
-        gallery: ['Landing1.jpeg', 'Flower Vases.jpeg', 'Dining Cutlery.jpeg', 'Glow in Dark Light.jpeg'],
+        mainImage: 'Landing1_enhanced.png',
+        gallery: ['Landing1_enhanced.png', 'Flower Vases.jpeg', 'Dining Cutlery.jpeg', 'Glow in Dark Light.jpeg'],
         features: [
             'Professional event setup',
             'Complete table and chair arrangements',
@@ -155,23 +155,27 @@ function loadProductDetails() {
     
     // Update page title
     document.title = `${product.name} - EcoFriendly Beach Rentals`;
+    document.getElementById('hero-title').textContent = product.name;
     
     // Update main image
-    document.getElementById('main-product-image').src = product.mainImage;
-    document.getElementById('main-product-image').alt = product.name;
+    const mainImage = document.getElementById('main-product-image');
+    mainImage.src = product.mainImage;
+    mainImage.alt = product.name;
     
     // Update product info
-    document.getElementById('product-name').textContent = product.name;
+    document.getElementById('product-title').textContent = product.name;
     document.getElementById('product-category').textContent = product.category;
     document.getElementById('product-description').textContent = product.description;
     
-    // Update gallery
-    const galleryContainer = document.getElementById('image-gallery');
+    // Update gallery thumbnails
+    const galleryContainer = document.getElementById('thumbnail-gallery');
     galleryContainer.innerHTML = '';
-    product.gallery.forEach(image => {
+    product.gallery.forEach((image, index) => {
         const img = document.createElement('img');
         img.src = image;
         img.alt = product.name;
+        img.className = 'thumbnail';
+        if (index === 0) img.classList.add('active');
         img.onclick = () => changeMainImage(image);
         galleryContainer.appendChild(img);
     });
@@ -198,6 +202,29 @@ function loadProductDetails() {
     const whatsappBtn = document.getElementById('whatsapp-inquiry');
     const message = `Hello! I'm interested in the ${product.name}. Could you please provide more information about availability and setup?`;
     whatsappBtn.href = `https://wa.me/254797185854?text=${encodeURIComponent(message)}`;
+    
+    // Load related products
+    loadRelatedProducts(productId);
+}
+
+// Load related products
+function loadRelatedProducts(currentProductId) {
+    const relatedContainer = document.getElementById('related-products');
+    
+    // Get all products except the current one
+    const relatedProducts = Object.entries(products)
+        .filter(([id, product]) => id !== currentProductId)
+        .slice(0, 3); // Show only 3 related products
+    
+    relatedContainer.innerHTML = relatedProducts.map(([id, product]) => `
+        <div class="related-item" onclick="window.location.href='product-details.html?id=${id}'">
+            <img src="${product.mainImage}" alt="${product.name}">
+            <div class="related-item-info">
+                <h4>${product.name}</h4>
+                <p>${product.shortDescription}</p>
+            </div>
+        </div>
+    `).join('');
 }
 
 // Change main image

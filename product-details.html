@@ -170,6 +170,34 @@
             color: white;
         }
         
+        .product-features ul,
+        .product-specs ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .product-features li,
+        .product-specs li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-features li:last-child,
+        .product-specs li:last-child {
+            border-bottom: none;
+        }
+        
+        .product-category {
+            background: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
         .related-products {
             margin-top: 80px;
             padding: 50px 0;
@@ -291,7 +319,7 @@
 
     <div class="product-container">
         <div class="product-gallery">
-            <img id="main-image" class="main-image" src="" alt="Product Image">
+            <img id="main-product-image" class="main-image" src="" alt="Product Image">
             <div class="thumbnail-gallery" id="thumbnail-gallery">
                 <!-- Thumbnails will be populated by JavaScript -->
             </div>
@@ -299,20 +327,27 @@
 
         <div class="product-info">
             <h2 id="product-title" class="product-title">Loading...</h2>
-            <div id="product-price" class="product-price">KSh 0</div>
+            <p id="product-category" class="product-category"></p>
             <div id="product-description" class="product-description">
                 Loading product details...
             </div>
 
+            <div class="product-features">
+                <h3>Features & Included Items</h3>
+                <ul id="features-list">
+                    <!-- Features will be populated by JavaScript -->
+                </ul>
+            </div>
+
             <div class="product-specs">
                 <h3>Specifications</h3>
-                <div id="product-specs">
+                <ul id="specifications-list">
                     <!-- Specs will be populated by JavaScript -->
-                </div>
+                </ul>
             </div>
 
             <div class="action-buttons">
-                <a href="#" id="whatsapp-btn" class="btn-primary">
+                <a href="#" id="whatsapp-inquiry" class="btn-primary">
                     <img src="whatsapp.png" alt="WhatsApp" style="width: 20px; height: 20px;">
                     Inquire Now
                 </a>

@@ -384,6 +384,27 @@ nav ul li a:hover {
     margin: 0 15px 15px;
 }
 
+.view-all-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #4CAF50, #2e8b57);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.view-all-btn:hover {
+    background: linear-gradient(135deg, #45a049, #267d4a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
 #contact {
     background-color: #f4f4f4;
     padding: 60px 0 40px 0;

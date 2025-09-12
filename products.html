@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - EcoFriendly Beach Rentals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.PNG" alt="EcoFriendly Beach Rentals Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://wa.me/254797185854?text=Hello%20EcoFriendly%20Beach%20Rentals!%20I'm%20interested%20in%20your%20services." target="_blank">
+                    <img src="whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://instagram.com/Ecofriendlybeachrentals" target="_blank">
+                    <img src="ig.PNG" alt="Instagram">
+                </a>
+                <a href="https://tiktok.com/@Ecofriendlybeachrentals" target="_blank">
+                    <img src="tiktok.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="products-main">
+        <section class="products-hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Our Products & Services</h1>
+                    <p>Sustainable beach event rentals for every occasion in Diani Beach, Kenya</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-container">
+            <div class="container">
+                
+                <!-- Event Packages Section -->
+                <div class="product-category">
+                    <h2>Event Packages</h2>
+                    <p class="category-description">Complete setup packages for your perfect beach event</p>
+                    <div class="products-grid">
+                        <div class="product-card" onclick="viewProduct('chill-outs')">
+                            <div class="product-image">
+                                <img src="Landing3_enhanced.png" alt="Chill Outs Package">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Chill Outs</h3>
+                                <p>Perfect for relaxed beach gatherings with comfortable seating and ambient lighting</p>
+                                <div class="product-features">
+                                    <span class="feature">Comfortable Seating</span>
+                                    <span class="feature">Ambient Lighting</span>
+                                    <span class="feature">Decorative Setup</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Chill Outs Package')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('gatherings')">
+                            <div class="product-image">
+                                <img src="Landing2_enhanced.png" alt="Gatherings Package">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Gatherings</h3>
+                                <p>Ideal for social events and celebrations with dining setup and entertainment area</p>
+                                <div class="product-features">
+                                    <span class="feature">Dining Setup</span>
+                                    <span class="feature">Entertainment Area</span>
+                                    <span class="feature">Social Seating</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Gatherings Package')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('mini-events')">
+                            <div class="product-image">
+                                <img src="Landing1_enhanced.png" alt="Mini Events Package">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Mini Events</h3>
+                                <p>Compact setup perfect for intimate celebrations and small group activities</p>
+                                <div class="product-features">
+                                    <span class="feature">Intimate Setting</span>
+                                    <span class="feature">Flexible Layout</span>
+                                    <span class="feature">Quick Setup</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Mini Events Package')">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Individual Items Section -->
+                <div class="product-category">
+                    <h2>Individual Items</h2>
+                    <p class="category-description">Rent individual items to customize your beach experience</p>
+                    <div class="products-grid">
+                        <div class="product-card" onclick="viewProduct('beach-shades')">
+                            <div class="product-image">
+                                <img src="38.jpg" alt="Beach Shades">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Beach Shades</h3>
+                                <p>Durable and stylish umbrellas providing excellent sun protection</p>
+                                <div class="product-features">
+                                    <span class="feature">UV Protection</span>
+                                    <span class="feature">Wind Resistant</span>
+                                    <span class="feature">Easy Setup</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Beach Shades')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('canvas-chairs')">
+                            <div class="product-image">
+                                <img src="Canvas Beach Chairs.jpeg" alt="Canvas Beach Chairs">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Canvas Beach Chairs</h3>
+                                <p>Comfortable and portable canvas chairs perfect for beach relaxation</p>
+                                <div class="product-features">
+                                    <span class="feature">Lightweight</span>
+                                    <span class="feature">Durable Canvas</span>
+                                    <span class="feature">Portable</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Canvas Beach Chairs')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('dining-tables')">
+                            <div class="product-image">
+                                <img src="39.jpg" alt="Beach Tables">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Beach Tables</h3>
+                                <p>Sturdy tables perfect for dining and activities on the beach</p>
+                                <div class="product-features">
+                                    <span class="feature">Weather Resistant</span>
+                                    <span class="feature">Stable Design</span>
+                                    <span class="feature">Easy to Clean</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Beach Tables')">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Items Section -->
+                <div class="product-category">
+                    <h2>Additional Items</h2>
+                    <p class="category-description">Enhance your beach experience with our premium accessories</p>
+                    <div class="products-grid">
+                        <div class="product-card" onclick="viewProduct('dining-cutlery')">
+                            <div class="product-image">
+                                <img src="Dining Cutlery.jpeg" alt="Dining Cutlery">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Dining Cutlery</h3>
+                                <p>Complete cutlery sets for your beach dining experience</p>
+                                <div class="product-features">
+                                    <span class="feature">Complete Set</span>
+                                    <span class="feature">Stainless Steel</span>
+                                    <span class="feature">Reusable</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Dining Cutlery')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('flower-vases')">
+                            <div class="product-image">
+                                <img src="Flower Vases.jpeg" alt="Decorative Flower Vases">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Decorative Flower Vases</h3>
+                                <p>Beautiful vases to add elegance to your beach setup</p>
+                                <div class="product-features">
+                                    <span class="feature">Elegant Design</span>
+                                    <span class="feature">Weather Proof</span>
+                                    <span class="feature">Various Sizes</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Decorative Flower Vases')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('water-resistant-pillows')">
+                            <div class="product-image">
+                                <img src="Water Resistant Pillows.jpeg" alt="Water Resistant Pillows">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Water Resistant Pillows</h3>
+                                <p>Comfortable pillows designed for beach and outdoor use</p>
+                                <div class="product-features">
+                                    <span class="feature">Water Resistant</span>
+                                    <span class="feature">Quick Dry</span>
+                                    <span class="feature">Comfortable</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Water Resistant Pillows')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('glow-lights')">
+                            <div class="product-image">
+                                <img src="Glow in Dark Light.jpeg" alt="Glow in Dark Lights">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Glow in Dark Lights</h3>
+                                <p>Atmospheric lighting perfect for evening beach events</p>
+                                <div class="product-features">
+                                    <span class="feature">Energy Efficient</span>
+                                    <span class="feature">Long Lasting</span>
+                                    <span class="feature">Ambient Lighting</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Glow in Dark Lights')">Inquire Now</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="viewProduct('sisal-mats')">
+                            <div class="product-image">
+                                <img src="Sisal Beach Marts.jpeg" alt="Sisal Beach Mats">
+                                <div class="product-overlay">
+                                    <span class="view-details">View Details</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sisal Beach Mats</h3>
+                                <p>Natural fiber mats providing comfortable ground coverage</p>
+                                <div class="product-features">
+                                    <span class="feature">Natural Fiber</span>
+                                    <span class="feature">Sand Resistant</span>
+                                    <span class="feature">Eco-Friendly</span>
+                                </div>
+                                <button class="inquire-btn" onclick="event.stopPropagation(); inquireWhatsApp('Sisal Beach Mats')">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Section -->
+                <div class="cta-section">
+                    <div class="cta-content">
+                        <h2>Ready to Plan Your Beach Event?</h2>
+                        <p>Contact us to discuss your requirements and get a customized quote for your perfect beach setup</p>
+                        <div class="cta-buttons">
+                            <a href="https://wa.me/254797185854?text=Hello%20EcoFriendly%20Beach%20Rentals!%20I'd%20like%20to%20discuss%20my%20beach%20event%20requirements." target="_blank" class="cta-btn primary">
+                                <img src="whatsapp.png" alt="WhatsApp" style="width: 20px; height: 20px; margin-right: 8px;">
+                                Chat on WhatsApp
+                            </a>
+                            <a href="index.html#contact" class="cta-btn secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>EcoFriendly Beach Rentals</h3>
+                    <p>Sustainable beach event rentals in Diani Beach, Kenya</p>
+                    <p>📍 Diani Beach Road, Diani Beach, Kenya</p>
+                    <p>📞 +254797185854 | 📧 Ecofriendlybeachrentals@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/Ecofriendlybeachrentals" target="_blank">
+                            <img src="fb.png" alt="Facebook" style="width: 20px; height: 20px;"> Facebook
+                        </a>
+                        <a href="https://instagram.com/Ecofriendlybeachrentals" target="_blank">
+                            <img src="ig.PNG" alt="Instagram" style="width: 20px; height: 20px;"> Instagram
+                        </a>
+                        <a href="https://tiktok.com/@Ecofriendlybeachrentals" target="_blank">
+                            <img src="tiktok.png" alt="TikTok" style="width: 20px; height: 20px;"> TikTok
+                        </a>
+                        <a href="https://wa.me/254797185854?text=Hello%20EcoFriendly%20Beach%20Rentals!%20I'm%20interested%20in%20your%20services." target="_blank">
+                            <img src="whatsapp.png" alt="WhatsApp" style="width: 20px; height: 20px;"> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EcoFriendly Beach Rentals. All rights reserved. | Designed for sustainable beach events</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function viewProduct(productId) {
+            window.location.href = `product-details.html?product=${productId}`;
+        }
+
+        function inquireWhatsApp(productName) {
+            const message = `Hello EcoFriendly Beach Rentals! I'm interested in the ${productName}. Could you please provide more details and pricing?`;
+            const whatsappUrl = `https://wa.me/254797185854?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
