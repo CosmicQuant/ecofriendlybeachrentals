@@ -2,6 +2,28 @@
 
 // Product data
 const products = {
+    'beach-weddings': {
+        name: 'Beach Wedding Package',
+        description: 'Create your dream wedding with our elegant beach wedding setups. Perfect romantic arrangements for your special day with stunning ocean views.',
+        mainImage: 'Landing1_compressed.jpg',
+        gallery: ['Landing1_compressed.jpg', 'Flower Vases.jpeg', 'Dining Cutlery.jpeg', 'Glow in Dark Light.jpeg'],
+        features: [
+            'Romantic ceremony setup',
+            'Elegant decorative elements',
+            'Professional table arrangements',
+            'Ambient lighting options',
+            'Floral arrangements',
+            'Complete coordination service'
+        ],
+        specifications: {
+            'Ideal For': 'Beach weddings, romantic ceremonies (20-100 guests)',
+            'Setup Time': '3-4 hours',
+            'Package Includes': 'Ceremony arch, seating, decorations, lighting',
+            'Duration': 'Full day rental with setup and breakdown',
+            'Customization': 'Fully customizable themes and colors'
+        },
+        category: 'Event Package'
+    },
     'chill-outs': {
         name: 'Chill Outs Package',
         description: 'Perfect relaxation setup for intimate beach gatherings. Create the ultimate chill experience with our carefully curated collection of comfort and ambiance elements.',
