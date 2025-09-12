@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - EcoFriendly Beach Rentals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Product Details Specific Styles */
+        .product-hero {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+        
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .product-gallery {
+            position: sticky;
+            top: 120px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .thumbnail-gallery {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .thumbnail.active,
+        .thumbnail:hover {
+            opacity: 1;
+            border: 2px solid #4CAF50;
+        }
+        
+        .product-info {
+            padding: 20px 0;
+        }
+        
+        .product-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .product-price {
+            font-size: 2em;
+            color: #4CAF50;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .product-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .product-specs {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .product-specs h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .spec-value {
+            color: #666;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .related-products {
+            margin-top: 80px;
+            padding: 50px 0;
+            background: #f8f9fa;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .related-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .related-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .related-item-info {
+            padding: 20px;
+        }
+        
+        .related-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .related-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+            
+            .product-gallery {
+                position: static;
+            }
+            
+            .product-title {
+                font-size: 2em;
+            }
+            
+            .product-price {
+                font-size: 1.5em;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.PNG" alt="EcoFriendly Beach Rentals Logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://wa.me/254797185854?text=Hello%20EcoFriendly%20Beach%20Rentals!%20I'm%20interested%20in%20your%20services." target="_blank">
+                    <img src="whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://instagram.com/Ecofriendlybeachrentals" target="_blank">
+                    <img src="ig.PNG" alt="Instagram">
+                </a>
+                <a href="https://tiktok.com/@Ecofriendlybeachrentals" target="_blank">
+                    <img src="tiktok.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="product-hero">
+        <div class="container">
+            <h1 id="hero-title">Product Details</h1>
+            <p>Premium beach rental equipment for your perfect event</p>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-gallery">
+            <img id="main-image" class="main-image" src="" alt="Product Image">
+            <div class="thumbnail-gallery" id="thumbnail-gallery">
+                <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h2 id="product-title" class="product-title">Loading...</h2>
+            <div id="product-price" class="product-price">KSh 0</div>
+            <div id="product-description" class="product-description">
+                Loading product details...
+            </div>
+
+            <div class="product-specs">
+                <h3>Specifications</h3>
+                <div id="product-specs">
+                    <!-- Specs will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="#" id="whatsapp-btn" class="btn-primary">
+                    <img src="whatsapp.png" alt="WhatsApp" style="width: 20px; height: 20px;">
+                    Inquire Now
+                </a>
+                <a href="index.html#products" class="btn-secondary">
+                    ← Back to Products
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-products">
+        <div class="container">
+            <h3 style="text-align: center; margin-bottom: 40px; font-size: 2em; color: #333;">Related Products</h3>
+            <div class="related-grid" id="related-products">
+                <!-- Related products will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>EcoFriendly Beach Rentals</h3>
+                    <p>Sustainable beach event rentals in Diani Beach, Kenya</p>
+                    <p>📍 Diani Beach Road, Diani Beach, Kenya</p>
+                    <p>📞 +254797185854 | 📧 Ecofriendlybeachrentals@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/Ecofriendlybeachrentals" target="_blank">
+                            <img src="fb.png" alt="Facebook" style="width: 20px; height: 20px;"> Facebook
+                        </a>
+                        <a href="https://instagram.com/Ecofriendlybeachrentals" target="_blank">
+                            <img src="ig.PNG" alt="Instagram" style="width: 20px; height: 20px;"> Instagram
+                        </a>
+                        <a href="https://tiktok.com/@Ecofriendlybeachrentals" target="_blank">
+                            <img src="tiktok.png" alt="TikTok" style="width: 20px; height: 20px;"> TikTok
+                        </a>
+                        <a href="https://wa.me/254797185854?text=Hello%20EcoFriendly%20Beach%20Rentals!%20I'm%20interested%20in%20your%20services." target="_blank">
+                            <img src="whatsapp.png" alt="WhatsApp" style="width: 20px; height: 20px;"> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EcoFriendly Beach Rentals. All rights reserved. | Designed for sustainable beach events</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="product-details.js"></script>
+</body>
+</html>
