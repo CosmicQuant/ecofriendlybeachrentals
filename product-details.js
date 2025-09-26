@@ -24,21 +24,21 @@ const products = {
         },
         category: 'Event Package'
     },
-    'chill-outs': {
-        name: 'Chill Outs Package',
-        description: 'Perfect relaxation setup for intimate beach gatherings. Create the ultimate chill experience with our carefully curated collection of comfort and ambiance elements.',
+    'experiences': {
+        name: 'Beach Experiences Package',
+        description: 'Create unique and memorable beach experiences with our exclusive setup packages. Perfect for intimate gatherings, romantic occasions, or special celebrations that require a distinctive atmosphere.',
         mainImage: 'Landing3_compressed.jpg',
         gallery: ['Landing3_compressed.jpg', 'Canvas Beach Chairs.jpeg', 'Glow in Dark Light.jpeg', 'Water Resistant Pillows.jpeg'],
         features: [
-            'Comfortable seating arrangements',
-            'Ambient lighting solutions',
-            'Cozy cushions and pillows',
+            'Comfortable lounge seating arrangements',
+            'Ambient LED lighting and decorative elements',
+            'Premium cushions and beach accessories',
             'Beach mats for ground seating',
-            'Decorative elements for atmosphere',
-            'Setup and breakdown service'
+            'Atmospheric decorative elements',
+            'Professional setup and breakdown service'
         ],
         specifications: {
-            'Ideal For': 'Intimate gatherings, romantic dates, small groups (2-8 people)',
+            'Ideal For': 'Intimate gatherings, romantic occasions, special celebrations (2-8 people)',
             'Setup Time': '1-2 hours',
             'Includes': 'Seating, lighting, decorative elements',
             'Duration': 'Full day rental',
